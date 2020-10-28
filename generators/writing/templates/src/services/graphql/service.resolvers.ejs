@@ -60,7 +60,6 @@ let moduleExports = function serviceResolvers<%- tplJsOrTs('(app, options)', '(a
   if (!__addField.relation.otherTableIsArray) {
     __temp = [
       '        (parent, args, content, ast) => {',
-      `          if(!parent.${__addField.relation.ourTable}) return null;`,
       '          const feathersParams = convertArgs(args, content, ast, {',
       `            query: { ${__addField.relation.otherTable}: `
         + `${__addField.relation.ourTableIsArray ? '{ $in: ' : ''}parent.${__addField.relation.ourTable}${__addField.relation.ourTableIsArray ? ' }' : ''}`
